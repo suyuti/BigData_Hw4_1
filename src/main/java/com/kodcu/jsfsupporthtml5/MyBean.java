@@ -22,14 +22,17 @@ import javax.annotation.PostConstruct;
 public class MyBean {
     
     private String isim    = "";
-    private String soyisim ="";
+    private String soyisim = "";
     private String telefon = "";
     private String eposta  = "";
+    private String adres   = "";
+
     
     private int isimDurum;
     private int soyisimDurum;
     private int telefonDurum;
     private int epostaDurum;
+    private int adresDurum;
     
     private String sayac = "0";
 
@@ -71,6 +74,14 @@ public class MyBean {
         this.eposta = eposta;
     }
 
+    public String getAdres() {
+        return adres;
+    }
+
+    public void setAdres(String adres) {
+        this.adres = adres;
+    }
+
     public String getSayac() {
         return sayac;
     }
@@ -107,8 +118,13 @@ public class MyBean {
             epostaDurum = 1;
         else 
             epostaDurum = 0;
+
+        if(!adres.equals(""))
+            adresDurum = 1;
+        else 
+            adresDurum = 0;
         
-        sayac = String.valueOf(isimDurum + soyisimDurum + telefonDurum + epostaDurum);
+        sayac = String.valueOf(isimDurum + soyisimDurum + telefonDurum + epostaDurum + adresDurum);
     }
 
     public void addToHTML5Attribute(ComponentSystemEvent event){

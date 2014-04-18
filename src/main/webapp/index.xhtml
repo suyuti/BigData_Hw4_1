@@ -88,13 +88,24 @@
                                                    </input>
                                                </td>
                                            </tr>
+
+                                           <tr>
+                                               <td><p>Adres</p></td>
+                                               <td>
+                                                   <input jsf:id="adres" type="text" placeholder="Adres yazın"
+                                                          jsf:value="#{myBean.adres}" size="30" style="padding: 3px;">
+                                                       <f:ajax event="keyup" execute="@this" listener="#{myBean.progressBar}" render="progress"/>
+                                                   </input>
+                                               </td>
+                                           </tr>
+
                                        </table>
                                     </td>
                                     <td>
                                         <div>
                                             <b>İlerleme durumu</b>
                                             <br/>
-                                            <progress jsf:id="progress" max="4" value="#{myBean.sayac}"></progress>
+                                            <progress jsf:id="progress" max="5" value="#{myBean.sayac}"></progress>
                                         </div>
                                     </td>
                                 </tr>
