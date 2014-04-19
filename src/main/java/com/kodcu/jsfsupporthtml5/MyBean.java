@@ -25,14 +25,14 @@ public class MyBean {
     private String soyisim = "";
     private String telefon = "";
     private String eposta  = "";
-    private String adres   = "";
+    private String number   = "";
 
     
     private int isimDurum;
     private int soyisimDurum;
     private int telefonDurum;
     private int epostaDurum;
-    private int adresDurum;
+    private int numberDurum;
     
     private String sayac = "0";
 
@@ -74,12 +74,12 @@ public class MyBean {
         this.eposta = eposta;
     }
 
-    public String getAdres() {
-        return adres;
+    public String getNumber() {
+        return number;
     }
 
-    public void setAdres(String adres) {
-        this.adres = adres;
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     public String getSayac() {
@@ -119,12 +119,12 @@ public class MyBean {
         else 
             epostaDurum = 0;
 
-        if(!adres.equals(""))
-            adresDurum = 1;
+        if(!number.equals(""))
+            numberDurum = 1;
         else 
-            adresDurum = 0;
+            numberDurum = 0;
         
-        sayac = String.valueOf(isimDurum + soyisimDurum + telefonDurum + epostaDurum + adresDurum);
+        sayac = String.valueOf(isimDurum + soyisimDurum + telefonDurum + epostaDurum + numberDurum);
     }
 
     public void addToHTML5Attribute(ComponentSystemEvent event){
